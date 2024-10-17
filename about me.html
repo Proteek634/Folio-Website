@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            color: white;
+            font-family: 'Sora', sans-serif;
+            line-height: 2;
+            padding: 20px;
+        }
+
+        .nav-bar {
+            width: 92%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 5px 0;
+            margin-bottom: 10px;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background-image: url('https://i.postimg.cc/g0PQQ5d7/Frame-6.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 100%;
+            height: 2px;
+            background-color: #444;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: left;
+            margin-bottom: 0px;
+            font-weight: 600;
+            font-size: 50px;
+            margin-left: 3%;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 900px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-layout {
+            display: flex;
+            justify-content: space-between;
+            gap: 80px;
+            margin-bottom: 60px;
+        }
+
+        .separator {
+            width: 3px;
+            background-color: #444;
+            height: auto;
+            margin: 0 20px;
+        }
+
+        .services-content-group {
+            display: flex;
+            flex-direction: column;
+            flex: 3;
+            margin-left: 5%;
+            gap: 40px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .services-header {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            margin-left: 10%;
+        }
+
+        .service-item p {
+            text-align: left;
+            margin-right: 10%;
+            margin-left: 10%;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        .contact-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-right: 12%;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+        }
+
+        .contact-info ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .separator {
+                width: 100%;
+                height: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="home page.html" class="logo-placeholder"></a>
+        <div class="nav-links">
+            <a href="Works.html" class="nav-link">Work</a>
+            <a href="about me.html" class="nav-link">About Me</a>
+            <a href="Writings.html" class="nav-link">Writings</a>
+            <a href="#" class="nav-link">Resume</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="divider"></div>
+
+        <h1>About Me</h1>
+
+        <div class="divider"></div>
+
+        <div class="image-placeholder">
+            <img src="https://i.postimg.cc/vYY0LnBX/Whats-App-Image-2024-05-04-at-6-22-10-AM-1.png" alt="Portfolio Image">
+        </div>
+
+        <div class="main-layout">
+            <div class="services-content-group">
+                <div class="content-section">
+                    <p>
+                        I'm a passionate Product Designer with expertise in UI/UX, User Research, and Interaction Design.
+                        My design approach centers on understanding people, their needs, and creating intuitive, user-centered solutions.
+                        As a professional designer, I specialize in crafting unique brand identities that truly reflect the essence of your business.
+                        From logos to brand guidelines, I work with you to ensure consistency across all touchpoints.
+                    </p>
+                </div>
+
+                <section class="services-section">
+                    <h2 class="services-header">Services</h2>
+                    <div class="services-list">
+                        <div class="service-item">
+                            <h3>Brand Identity</h3>
+                            <p>
+                                I specialize in crafting unique brand identities that truly reflect your business. From logos to guidelines,
+                                I ensure consistency across all touchpoints and establish a memorable brand that resonates with your audience.
+                            </p>
+                        </div>
+                        <div class="service-item">
+                            <h3>Web Development</h3>
+                            <p>
+                                I offer expert web development services to help you create a stunning online presence. Whether you need a new website
+                                or a redesign, I’ll ensure your site provides an intuitive and seamless user experience.
+                            </p>
+                        </div>
+                        <div class="service-item">
+                            <h3>Product Design</h3>
+                            <p>
+                                I specialize in crafting innovative solutions that blend form and function. From concept to prototyping, I create products
+                                that delight users and exceed expectations.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="contact-group">
+                <div class="contact-info">
+                    <h3>Contact</h3>
+                    <a href="https://drive.google.com/file/d/1YM8aJN2R801Xtx21i2WmhmobDbhOmIt1/view" class="contact-info">prateekdubey463@gmail.com</a>
+                </div>
+                <div class="contact-info">
+                    <h3>Resume</h3>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Letter PDF</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <h3>Writings</h3>
+                    <p>Medium</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Interests</h3>
+                    <p>Photography, Traveling, Drawing, Reading, Gaming</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Where I Lived and Studied</h3>
+                    <p>Lucknow, Uttar Pradesh</p>
+                    <p>Bangalore, Karnataka</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

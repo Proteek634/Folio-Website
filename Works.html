@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            background-color: #111;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .nav-bar {
+            width: 92%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 5px 0;
+            position: relative;
+            bottom: -50px;
+            margin-top: -2%;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background-image: url('https://i.postimg.cc/g0PQQ5d7/Frame-6.png');
+            background-size: cover;
+            background-position: center;
+            margin-left: 1%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto 0;
+            padding: 20px 0;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #444;
+            margin: 5px 0;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .work-card {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .work-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.postimg.cc/SKKZCnv0/n6v-L2-MJBcy-Up-Id4i-YCN7q-Jn-Qi4-jpg.png');
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover::before {
+            transform: scale(1.1);
+        }
+        .work-card2 {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .work-card2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.postimg.cc/cCvnfjJg/Frame-21.png');
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card2:hover::before {
+            transform: scale(1.1);
+        }
+
+        .view-project {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .work-card:hover .view-project {
+            opacity: 1;
+            transform: translate(-50%, -40%);
+        }
+
+        .work-description {
+            margin-top: 10px;
+            text-align: left;
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .work-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .work-category {
+            color: #888;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="index.html">
+            <div class="logo-placeholder"></div>
+        </a>
+        <div class="nav-links">
+            <a href="Works.html" class="nav-link">Work</a>
+            <a href="about me.html" class="nav-link">About Me</a>
+            <a href="Writings.html" class="nav-link">Writings</a>
+            <a href="https://drive.google.com/file/d/1YM8aJN2R801Xtx21i2WmhmobDbhOmIt1/view" class="nav-link">Resume</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="divider"></div>
+
+        <h2>Work</h2>
+
+        <div class="divider"></div>
+
+        <div class="works-grid">
+            <div>
+                <a href="work 1.html">
+                    <div class="work-card2">
+                        <div class="view-project">View Project</div>
+                    </div>
+                </a>
+                <div class="work-description">
+                    <p class="work-title">Sample Project</p>
+                    <p class="work-category">Brand Identity, Website</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="work 1.html">
+                    <div class="work-card">
+                        <div class="view-project">View Project</div>
+                    </div>
+                </a>
+                <div class="work-description">
+                    <p class="work-title">Sample Project</p>
+                    <p class="work-category">Brand Identity, Digital Product</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="work 1.html">
+                    <div class="work-card">
+                        <div class="view-project">View Project</div>
+                    </div>
+                </a>
+                <div class="work-description">
+                    <p class="work-title">Sample Project</p>
+                    <p class="work-category">Website, Digital Product</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="work 1.html">
+                    <div class="work-card">
+                        <div class="view-project">View Project</div>
+                    </div>
+                </a>
+                <div class="work-description">
+                    <p class="work-title">Sample Project</p>
+                    <p class="work-category">Brand Identity, Print</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="work 1.html">
+                    <div class="work-card">
+                        <div class="view-project">View Project</div>
+                    </div>
+                </a>
+                <div class="work-description">
+                    <p class="work-title">Sample Project</p>
+                    <p class="work-category">Digital Design System</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="work 1.html">
+                    <div class="work-card">
+                        <div class="view-project">View Project</div>
+                    </div>
+                </a>
+                <div class="work-description">
+                    <p class="work-title">Sample Project</p>
+                    <p class="work-category">Website, Packaging</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

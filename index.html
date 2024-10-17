@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prateek Dubey Porfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            background-color: #111;
+            color: white;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0;
+            border-bottom: 0.5px solid white;
+            border-radius: 0px;
+            height: 65px;
+            z-index: 999;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-left {
+            padding-left: 20px;
+        }
+
+        .nav-right {
+            padding-right: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 10px 20px;
+            border: 0px solid white;
+            border-radius: 0px;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .logo {
+            position: absolute;
+            left: 5%;
+            transform: translateX(-50%);
+            width: 55px;
+            height: 55px;
+            background-image: url('https://i.postimg.cc/g0PQQ5d7/Frame-6.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+
+        .hero-container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.postimg.cc/bwsD2Cts/logo4png-1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 184px;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .profile {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 250px;
+            height: 250px;
+            background-image: url('https://i.postimg.cc/kgShGL7C/Rectangle-1.png');
+            background-size: cover;
+            border-radius: 50px;
+            border: 2px solid white;
+            overflow: hidden;
+            cursor: pointer;
+            transition: filter 0.3s ease, background-color 0.3s ease;
+        }
+
+        .profile::after {
+            content: 'About Me';
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: regular;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile:hover {
+            filter: invert(100%);
+        }
+
+        .profile:hover::after {
+            opacity: 1;
+        }
+
+        .explore-btn {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            padding: 20px 50px;
+            border: 2px solid white;
+            border-radius: 0px;
+            background: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .description-text {
+            text-align: center;
+            margin: 15% auto;
+            max-width: 800px;
+            font-size: 22px;
+            line-height: 1.8;
+            color: white;
+        }
+
+        .description-text .faded {
+            opacity: 0.5;
+        }
+
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        .side-nav a {
+            padding: 10px 30px;
+            text-decoration: none;
+            font-size: 24px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-nav a:hover {
+            color: #f1f1f1;
+        }
+
+        .side-nav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 36px;
+        }
+
+        .works-writings-section {
+            padding: 50px 20px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 100%;
+            background-color: #222;
+            border-radius: 0px;
+            background-image: url('https://i.postimg.cc/SKKZCnv0/n6v-L2-MJBcy-Up-Id4i-YCN7q-Jn-Qi4-jpg.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card::after {
+            content: 'Coming Soon';
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .card2 {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 100%;
+            background-color: #222;
+            border-radius: 0px;
+            background-image: url('https://i.postimg.cc/cCvnfjJg/Frame-21.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card2::after {
+            content: 'View Project';
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card2:hover::after {
+            opacity: 1;
+        }
+
+        .card2:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .writings-section {
+            margin-top: 100px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .footer img {
+            height: 16px;
+            margin: 0 5px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar
+
+
+            h1 {
+                font-size: 80px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            .works-writings-section {
+                padding: 20px;
+            }
+
+            .card {
+                max-width: 100%;
+                height: 150px;
+            }
+            @media (max-width: 1024px) {
+    h1 {
+        font-size: 120px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .profile {
+        width: 200px;
+        height: 200px;
+    }
+    .explore-btn {
+        font-size: 18px;
+        padding: 15px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 80px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .profile {
+        width: 150px;
+        height: 150px;
+    }
+    .explore-btn {
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    .profile {
+        width: 120px;
+        height: 120px;
+    }
+    .explore-btn {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
+        }
+        .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .side-nav {
+        width: 0;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        overflow: hidden;
+        transition: width 0.3s ease;
+    }
+
+    .side-nav.open {
+        width: 100%;
+    }
+
+    .side-nav a {
+        padding: 15px 30px;
+        font-size: 24px;
+        display: block;
+        transition: color 0.3s;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        font-size: 36px;
+        cursor: pointer;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="hamburger" onclick="openNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" class="nav-link">Home</a>
+        <a href="Works.html" class="nav-link">Work</a>
+        <a href="about me.html" class="nav-link">About Me</a>
+        <a href="Writings.html" class="nav-link">Writings</a>
+        <a href="https://drive.google.com/file/d/1YM8aJN2R801Xtx21i2WmhmobDbhOmIt1/view" class="nav-link">Resume</a>
+    </div>
+
+    <div class="hero-container">
+        <div class="background"></div>
+    
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleSideNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    
+        <div id="sideNav" class="side-nav">
+            <span class="closebtn" onclick="toggleSideNav()">&times;</span>
+            <a href="Works.html">Work</a>
+            <a href="about%20me.html">About Me</a>
+            <a href="Writings.html">Writings</a>
+            <a href="https://drive.google.com/file/d/1YM8aJN2R801Xtx21i2WmhmobDbhOmIt1/view">Resume</a>
+        </div>
+    
+        <div class="nav-bar">
+            <div class="nav-left"></div>
+            <div class="logo"></div>
+            <div class="nav-right">
+                <a href="Works.html" class="nav-link">Work</a>
+                <a href="about%20me.html" class="nav-link">About Me</a>
+                <a href="Writings.html" class="nav-link">Writings</a>
+                <a href="https://drive.google.com/file/d/1YM8aJN2R801Xtx21i2WmhmobDbhOmIt1/view" class="nav-link">Resume</a>
+            </div>
+        </div>
+    
+        <h2>product designer</h2>
+        <h1>prateek</h1>
+        <p>I'm a product designer focused on intuitive, user-centered solutions through research and interaction design, aiming to make everyday experiences effortlessly better.</p>
+    
+        <a href="about%20me.html">
+            <div class="profile"></div>
+        </a>
+        <a href="Works.html">
+            <button class="explore-btn">Explore all my works</button>
+        </a>
+    </div>
+    
+
+    <div class="description-text">
+        <span class="faded">I'm a passionate</span> Product Designer <span class="faded">with expertise in</span> UI/UX, User Research, and Interaction Design. <span class="faded">My design approach</span> <span class="faded">centers on</span> understanding people, their needs, and creating intuitive, user-centered solutions.
+    </div>
+
+    <section class="works-writings-section">
+        <h2 class="section-title">Works</h2>
+        <div class="grid-container">
+            <a href="work 1.html"class="card2"></a>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+
+        <h2 class="section-title writings-section">Writings</h2>
+        <div class="grid-container">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <div class="footer">
+        Designed and coded with <img src="https://i.postimg.cc/05tqJV1t/Vector.png" alt="heart"/> and <img src="https://i.postimg.cc/Wbhcm02s/Vector-1.png" alt="music note"/>
+    </div>
+    <script>
+        function toggleSideNav() {
+    const sideNav = document.getElementById("sideNav");
+    sideNav.classList.toggle("open");
+}
+
+    </script>
+    
+</body>
+</html>

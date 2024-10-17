@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            background-color: #111;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .nav-bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 5%;
+            background-color: #111;
+            position: sticky;
+            top: 1%;
+            z-index: 1000;
+            margin-bottom: -4%;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background-image: url('https://i.postimg.cc/g0PQQ5d7/Frame-6.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            margin: 80px auto 0;
+            padding: 20px 0;
+        }
+
+        .side-nav {
+            flex: 0.2;
+            position: sticky;
+            top: 30%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-right: 20px;
+        }
+
+        .side-nav a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            opacity: 0.4;
+            transition: opacity 0.3s ease, color 0.3s ease;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .side-nav a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .side-nav a.active::before,
+        .side-nav a:hover::before {
+            background-color: white;
+        }
+
+        .side-nav a.active,
+        .side-nav a:hover {
+            opacity: 1;
+            color: white;
+        }
+
+        .content {
+            flex: 0.8;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #444;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .full-width-image {
+            width: calc(100%);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/1zgfzdvf/Frame-22.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        
+        .full-width-image2 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 1200px;
+            background-image: url('https://i.postimg.cc/rF8s4sh6/Artboard-95-4x-2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+         .full-width-image3 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/LsrhgVWv/Artboard-44-copy-15-4x-2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .full-width-image4 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/Qjh1gxBd/Artboard-2-copy-15-4x-3.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .full-width-image5 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/08HSqYVz/Frame-okay.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .full-width-image6 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/50kR5nvY/Free-Wristband-Mockup-6-1.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .full-width-image7 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/jKMtsRNJ/Frame-2-20-2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .full-width-image8 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/3wYV3yYR/realistic-business-card-mockup-1.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .full-width-image9 {
+            width: calc(100% - 60px);
+            margin: 20px 30px;
+            height: 900px;
+            background-image: url('https://i.postimg.cc/50trFZHW/Group-145.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .side-nav {
+                display: none;
+            }
+
+            .full-width-image {
+                width: calc(100% - 40px);
+                margin: 0 20px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <div class="logo-placeholder"></div>
+        <div class="nav-links">
+            <a href="Works.html" class="nav-link">Work</a>
+            <a href="about%20me.html" class="nav-link">About Me</a>
+            <a href="Writings.html" class="nav-link">Writings</a>
+            <a href="https://drive.google.com/file/d/1YM8aJN2R801Xtx21i2WmhmobDbhOmIt1/view" class="nav-link">Resume</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav class="side-nav">
+            <a href="#overview">Overview</a>
+            <a href="#problem">Problem</a>
+            <a href="#solution">Solution</a>
+            <a href="#design">Design</a>
+            <a href="#steps">Future Steps</a>
+            <a href="#learned">What I Learned</a>
+        </nav>
+
+        <div class="content">
+            <div id="overview" class="divider"></div>
+            <h2>Overview</h2>
+            <p>Our mission was to create a distinct brand identity...</p>
+            <div class="full-width-image2" id="research"></div>
+            <div class="full-width-image" id="research"></div>
+            <div class="full-width-image3" id="research"></div>
+
+            <div id="problem" class="full-width-image"></div>
+            <div class="full-width-image4" id="research"></div>
+            <div class="full-width-image5" id="research"></div>
+            <div class="full-width-image6" id="research"></div>
+
+            <div id="solution" class="divider"></div>
+            <h2>Solution</h2>
+            <p>We provided comprehensive design solutions...</p>
+
+            <div class="full-width-image7" id="research"></div>
+            <div class="full-width-image8" id="research"></div>
+            <div class="full-width-image9" id="research"></div>
+
+            <div id="design" class="divider"></div>
+            <h2>Design</h2>
+            <p>This section discusses the design decisions made...</p>
+
+            <div class="full-width-image2"></div>
+
+            <div id="steps" class="divider"></div>
+            <h2>Future Steps</h2>
+            <p>These are the next steps in the project...</p>
+
+            <div class="full-width-image3"></div>
+
+            <div id="learned" class="divider"></div>
+            <h2>What I Learned</h2>
+            <p>This project provided valuable insights...</p>
+
+            <div class="full-width-image9"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.side-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const sections = document.querySelectorAll('.content > div[id]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const navLink = document.querySelector(`.side-nav a[href="#${entry.target.id}"]`);
+                if (entry.isIntersecting) {
+                    navLink.classList.add('active');
+                } else {
+                    navLink.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+
+</body>
+</html>
